@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NK Planners</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="sidebar" class="sidebar">
+    <button class="close-btn" onclick="toggleSidebar()">&#10005;</button>
+    <a href="index.html" class="sidebar-link">Home</a>
+    <a href="services.html" class="sidebar-link">Services</a>
+    <a href="calculator.html" class="sidebar-link">Calculator</a>
+    <a href="contact.html" class="sidebar-link">Contact</a>
+  </div>
+
+  <div id="main-content">
+    <button class="open-btn" onclick="toggleSidebar()">&#9776; Menu</button>
+
+    <header class="intro-header">
+      <h1>Welcome to NK Planners</h1>
+      <p class="tagline">Creating Stunning, Useful, and Unforgettable Events in Sydney</p>
+
+      <div class="features">
+        <div class="feature">
+          <img src="event1.jpeg" alt="Event Planning" class="feature-image">
+          <h3>Event Planning</h3>
+          <p>Specialized planning and design for all parts of Sydney</p>
+        </div>
+        <div class="feature">
+          <img src="event2.jpeg" alt="Unique Perspective" class="feature-image">
+          <h3>Unique Perspective</h3>
+          <p>Custom lighting, arrangements, and decorations</p>
+        </div>
+        <div class="feature">
+          <img src="event3.jpeg" alt="Tailored Solutions" class="feature-image">
+          <h3>Tailored Solutions</h3>
+          <p>Meeting your schedule, budget, and personal preferences</p>
+        </div>
+      </div>
+
+      <a href="contact.html" class="cta-button">Get Started Today</a>
+    </header>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("active");
+      document.getElementById("main-content").classList.toggle("shifted");
+    }
+  </script>
+</body>
+</html>
