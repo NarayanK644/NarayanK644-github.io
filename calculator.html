@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator - NK Planners</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="sidebar" class="sidebar">
+        <button class="close-btn" onclick="toggleSidebar()">&#10005;</button>
+        <a href="index.html" class="sidebar-link">Home</a>
+        <a href="services.html" class="sidebar-link">Services</a>
+        <a href="calculator.html" class="sidebar-link">Calculator</a>
+        <a href="contact.html" class="sidebar-link">Contact</a>
+    </div>
+    
+    <div id="main-content">
+        <button class="open-btn" onclick="toggleSidebar()">&#9776; Menu</button>
+    </div>
+
+    <section id="calculator">
+        <h2>Event Cost Calculator</h2>
+        <label for="guests">Number of Guests:</label>
+        <input type="number" id="guests" placeholder="Enter number of guests">
+
+        <label for="budget">Budget:</label>
+        <input type="number" id="budget" placeholder="Enter your budget">
+
+        <button onclick="calculate()">Calculate</button>
+
+        <div id="result"></div>
+    </section>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById("sidebar").classList.toggle("active");
+            document.getElementById("main-content").classList.toggle("shifted");
+        }
+
+        function calculate() {
+            const guests = document.getElementById('guests').value;
+            const budget = document.getElementById('budget').value;
+            const costPerGuest = 50; // Example cost per guest
+            const totalCost = guests * costPerGuest;
+
+            if (totalCost > budget) {
+                document.getElementById('result').innerText = `Your total cost is $${totalCost}. This exceeds your budget.`;
+            } else {
+                document.getElementById('result').innerText = `Your total cost is $${totalCost}. This is within your budget.`;
+            }
+        }
+    </script>
+    <footer class="site-footer">
+        <div class="footer-content">
+          <div class="footer-section about">
+            <h3>About NK Planners</h3>
+            <p>
+              At NK Planners, we bring your dream events to life with precision, creativity, and unparalleled dedication. From elegant weddings to corporate gatherings, our expertise ensures unforgettable experiences throughout Sydney.
+            </p>
+          </div>
+          <div class="footer-section contact">
+            <h3>Contact Us</h3>
+            <p><i class="fas fa-phone-alt"></i> Phone: +61 426628710</p>
+            <p><i class="fas fa-envelope"></i> Email: khattrinarayan83@.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Location: 66/10 Bridge Street, Granville, 2142, Sydney, Australia</p>
+          </div>
+      
+          <div class="footer-section social">
+            <h3>Follow Us</h3>
+            <a href="https://www.facebook.com/NKPlanners" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/NKPlanners" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.twitter.com/NKPlanners" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/NKPlanners" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <p>&copy; 2024 NK Planners. All rights reserved.</p>
+        </div>
+      </footer>
+<style> .site-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 30px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-section {
+    margin: 15px;
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .footer-section h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #fda085;
+  }
+  
+  .footer-section p {
+    font-size: 0.9em;
+    line-height: 1.6;
+  }
+  
+  .footer-section .social a {
+    margin: 0 5px;
+    display: inline-block;
+    color: #fda085;
+    font-size: 1.2em;
+    transition: color 0.3s;
+  }
+  
+  .footer-section .social a:hover {
+    color: #fff;
+  }
+  
+  .footer-bottom {
+    margin-top: 15px;
+    font-size: 0.8em;
+    color: #bbb;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+  }
+  </style>      
+</body>
+</html>
